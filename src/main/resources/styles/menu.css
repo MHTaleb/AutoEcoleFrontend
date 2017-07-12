@@ -1,0 +1,25 @@
+/*
+ * Empty Stylesheet file.
+ */
+.menuButton:hover{
+    -fx-background-color: #476C9B;
+}
+
+.exitButton{
+    -fx-graphic: url(../media/drawer/logout.png) ;
+}
+.homeButton{
+    -fx-graphic: url(../media/drawer/icon.png);
+}
+.candidatButton{
+    -fx-graphic: url(../media/drawer/classroom.png);
+}
+.printButton{
+    -fx-graphic: url(../media/drawer/triptych-brochure.png);
+}
+.examinationButton{
+    -fx-graphic: url(../media/drawer/exam.png);
+}
+.caisseButton{
+    -fx-graphic: url(../media/drawer/give-money.png);
+}

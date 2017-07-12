@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.validation.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="445.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.talcorpdz.autoecole.clientgui.FXMLController">
+   <children>
+      <StackPane fx:id="rootStackPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="50.0" prefHeight="328.0" prefWidth="809.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="328.0" prefWidth="834.0" style="-fx-background-color: #3D59AB;" styleClass="body" stylesheets="@../styles/Styles.css" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="328.0" prefWidth="599.0">
+                           <children>
+                              <Pane fx:id="loginPane" onMouseEntered="#opaqueFull" onMouseExited="#opaqueTrans" opacity="0.85" prefHeight="232.0" prefWidth="555.0" style="-fx-background-color: #fff;" HBox.hgrow="NEVER">
+                                 <HBox.margin>
+                                    <Insets bottom="50.0" top="50.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                                 <children>
+                                    <JFXButton fx:id="btConnect" layoutX="117.0" layoutY="160.0" onAction="#doConnect" prefHeight="27.0" prefWidth="119.0" ripplerFill="#483dae" style="-fx-background-color: #fff; -fx-border-color: #000;" text="Connecter" textFill="#3d59ab">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </JFXButton>
+                                    <JFXTextField fx:id="username" layoutX="40.0" layoutY="57.0" prefHeight="28.0" prefWidth="196.0" promptText="Utilisateur">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <validators>
+                                            <RequiredFieldValidator message="Veuillez saisir le nom d'utilisateur" src="username" />
+                                       </validators>
+                                       <opaqueInsets>
+                                          <Insets right="30.0" />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </JFXTextField>
+                                    <JFXPasswordField fx:id="password" layoutX="40.0" layoutY="102.0" prefHeight="28.0" prefWidth="196.0" promptText="Mot de passe">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                       <validators>
+                                            <RequiredFieldValidator message="Veuillez saisir le mot de passe" src="password" />
+                                       </validators>
+                                       <opaqueInsets>
+                                          <Insets right="30.0" />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets right="30.0" />
+                                       </padding>
+                                    </JFXPasswordField>
+                                    <ImageView fitHeight="165.0" fitWidth="323.0" layoutX="276.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../media/login/voiture.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

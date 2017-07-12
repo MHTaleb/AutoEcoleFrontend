@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="config.ConfigController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="794.0" prefWidth="1015.0" styleClass="mainFxmlClass">
+          <stylesheets>
+              <URL value="@/styles/config.css" />
+          </stylesheets>
+          <children>
+              <VBox prefHeight="794.0" prefWidth="1015.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                      <HBox alignment="CENTER_LEFT" prefHeight="118.0" prefWidth="1003.0" spacing="20.0" VBox.vgrow="NEVER">
+                          <children>
+                              <JFXButton alignment="CENTER" buttonType="RAISED" graphicTextGap="20.0" prefHeight="72.0" prefWidth="304.0" stylesheets="@../styles/config.css" text="Utilisateurs " textFill="WHITESMOKE" HBox.hgrow="ALWAYS">
+                         
+                                        <font>
+                                      <Font name="Arial Black" size="15.0" />
+                                  </font>
+                      
+                                        <styleClass>
+                                      <String fx:value="quickButton" />
+                                      <String fx:value="usersButton" />
+                                  </styleClass>
+                                  <padding>
+                                      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                                  </padding>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" graphicTextGap="20.0" prefHeight="72.0" prefWidth="304.0" stylesheets="@../styles/config.css" text="Historique" textFill="WHITESMOKE" HBox.hgrow="ALWAYS">
+                                  <font>
+                                      <Font name="Arial Black" size="15.0" />
+                                  </font>
+                                  <styleClass>
+                                      <String fx:value="quickButton" />
+                                      <String fx:value="storyButton" />
+                                  </styleClass>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" graphicTextGap="20.0" prefHeight="72.0" prefWidth="304.0" stylesheets="@../styles/config.css" text="Sauvegarde" textFill="WHITESMOKE" HBox.hgrow="ALWAYS">
+                  
+                                        <font>
+                                      <Font name="Arial Black" size="15.0" />
+                                  </font>
+                                  <styleClass>
+                                      <String fx:value="quickButton" />
+                                      <String fx:value="saveButton" />
+                                  </styleClass>
+                              </JFXButton>
+                          </children>
+                          <padding>
+                              <Insets top="20.0" />
+                          </padding>
+                     <VBox.margin>
+                        <Insets left="32.0" />
+                     </VBox.margin>
+                      </HBox>
+                      <HBox prefHeight="692.0" prefWidth="1003.0" spacing="40.0" VBox.vgrow="NEVER">
+                          <children>
+                              <VBox prefHeight="638.0" prefWidth="456.0" HBox.hgrow="NEVER">
+                                  <children>
+                                      <BorderPane prefHeight="520.0" prefWidth="454.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
+                                          <top>
+                                              <Pane prefHeight="70.0" prefWidth="387.0" style="-fx-background-color: #009688;" BorderPane.alignment="CENTER">
+                                                  <children>
+                                                      <Label layoutY="4.0" text="Ajouter Utilisateur" textFill="WHITE">
+                                                          <font>
+                                                              <Font name="Arial Black" size="21.0" />
+                                                          </font>
+                                                          <padding>
+                                                              <Insets left="16.0" top="16.0" />
+                                                          </padding>
+                                                      </Label>
+                                                  </children>
+                                              </Pane>
+                                          </top>
+                                          <center>
+                                              <HBox prefHeight="383.0" prefWidth="377.0" BorderPane.alignment="CENTER">
+                                                  <children>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="452.0" prefWidth="454.0" spacing="40.0" HBox.hgrow="SOMETIMES">
+                                                          <padding>
+                                                              <Insets bottom="16.0" left="32.0" right="32.0" top="16.0" />
+                                                          </padding>
+                                                          <children>
+                                                <HBox prefHeight="158.0" prefWidth="393.0" spacing="10.0">
+                                                   <children>
+                                                      <ImageView fx:id="image" fitHeight="124.0" fitWidth="120.0" onMouseClicked="#uploadImage" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../media/config/manager.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                      <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                      <VBox prefHeight="200.0" prefWidth="100.0" spacing="40.0" HBox.hgrow="ALWAYS">
+                                                         <children>
+                                                            <JFXTextField fx:id="name" labelFloat="true" promptText="Nom" styleClass="input" stylesheets="@../styles/config.css" unFocusColor="#009688" />
+                                                            <JFXTextField fx:id="lastName" labelFloat="true" promptText="Prénom" styleClass="input" stylesheets="@../styles/config.css" unFocusColor="#009688" />
+                                                         </children>
+                                                         <padding>
+                                                            <Insets top="20.0" />
+                                                         </padding>
+                                                      </VBox>
+                                                   </children>
+                                                </HBox>
+                                                <Separator prefHeight="0.0" prefWidth="393.0" />
+                                                <JFXDatePicker fx:id="birthDate" overLay="true" prefHeight="25.0" prefWidth="724.0" promptText="Date de naissance" styleClass="input" stylesheets="@../styles/config.css" />
+                                                <JFXComboBox fx:id="phoneNumbers" editable="true" labelFloat="true" onAction="#addPhoneNumber" prefHeight="25.0" prefWidth="918.0" promptText="Numéros de Téléphone" styleClass="input" stylesheets="@../styles/config.css" />
+                                                <Separator prefHeight="7.0" prefWidth="334.0" />
+                                                <JFXTextField fx:id="username" labelFloat="true" promptText="Utilisateur" styleClass="input" stylesheets="@../styles/config.css" />
+                                                <JFXPasswordField fx:id="password" labelFloat="true" onAction="#showPassword" promptText="Mot de passe" styleClass="input" stylesheets="@../styles/config.css" />
+                                                <HBox alignment="TOP_RIGHT" spacing="50.0">
+                                                   <children>
+                                                      <JFXButton fx:id="reset" buttonType="RAISED" onAction="#resetForm" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #0b6e4f; -fx-background-radius: 0;" text="Effacé" textFill="#fff6f6">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                      <JFXButton fx:id="btAdd" buttonType="RAISED" onAction="#addUser" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #234146; -fx-background-radius: 0;" text="Valider" textFill="#fff6f6">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="32.0" />
+                                                   </padding>
+                                                </HBox>
+                                                          </children>
+                                                          <HBox.margin>
+                                                              <Insets />
+                                                          </HBox.margin>
+                                                      </VBox>
+                                                  </children>
+                                              </HBox>
+                                          </center>
+                                          <effect>
+                                              <DropShadow />
+                                          </effect>
+                                      </BorderPane>
+                                  </children>
+                              </VBox>
+                              <VBox prefHeight="638.0" prefWidth="464.0" HBox.hgrow="NEVER">
+                           <children>
+                              <BorderPane prefHeight="453.0" prefWidth="429.0" style="-fx-background-color: #fff;" VBox.vgrow="ALWAYS">
+                                 <top>
+                                    <Pane prefHeight="70.0" prefWidth="387.0" style="-fx-background-color: #9E4624;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutY="4.0" text="Liste Des Utilisateurs" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Black" size="21.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="16.0" top="16.0" />
+                                             </padding>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </top>
+                                 <center>
+                                    <HBox prefHeight="383.0" prefWidth="377.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <VBox alignment="TOP_CENTER" prefHeight="383.0" prefWidth="35.0" spacing="16.0" HBox.hgrow="SOMETIMES">
+                                             <padding>
+                                                <Insets bottom="16.0" left="32.0" right="32.0" top="16.0" />
+                                             </padding>
+                                             <children>
+                                                <TableView prefHeight="576.0" prefWidth="396.0" styleClass="table" stylesheets="@../styles/config.css">
+                                                  <columns>
+                                                    <TableColumn prefWidth="75.0" text="Nom" />
+                                                      <TableColumn prefWidth="75.0" text="Prénom" />
+                                                      <TableColumn prefWidth="75.0" text="Utilisateur" />
+                                                      <TableColumn prefWidth="75.0" text="Photo" />
+                                                  </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                </TableView>
+                                                <HBox alignment="TOP_RIGHT" spacing="40.0">
+                                                   <children>
+                                                      <JFXButton buttonType="RAISED" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #BA1200; -fx-background-radius: 0;" text="Suprimer" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                      <JFXButton buttonType="RAISED" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #009B77; -fx-background-radius: 0;" text="Modifier" textFill="WHITE">
+                                                         <font>
+                                                            <Font name="System Bold" size="14.0" />
+                                                         </font>
+                                                      </JFXButton>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets right="32.0" />
+                                                   </padding>
+                                                </HBox>
+                                             </children>
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </center>
+                                 <effect>
+                                    <DropShadow />
+                                 </effect>
+                              </BorderPane>
+                           </children>
+                              </VBox>
+                          </children>
+                          <padding>
+                              <Insets bottom="32.0" left="32.0" right="32.0" top="32.0" />
+                          </padding>
+                      </HBox>
+                  </children>
+              </VBox>
+          </children>
+      </AnchorPane>
+   </children>
+</StackPane>
