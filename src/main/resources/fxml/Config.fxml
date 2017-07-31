@@ -122,8 +122,35 @@
                                                    </children>
                                                 </HBox>
                                                 <Separator prefHeight="0.0" prefWidth="393.0" />
-                                                <JFXDatePicker fx:id="birthDate" overLay="true" prefHeight="25.0" prefWidth="724.0" promptText="Date de naissance" styleClass="input" stylesheets="@../styles/config.css" />
-                                                <JFXComboBox fx:id="phoneNumbers" editable="true" labelFloat="true" onAction="#addPhoneNumber" prefHeight="25.0" prefWidth="918.0" promptText="Numéros de Téléphone" styleClass="input" stylesheets="@../styles/config.css" />
+                                                <VBox>
+                                                   <children>
+                                                      <JFXDatePicker fx:id="birthDate" overLay="true" prefHeight="25.0" prefWidth="376.0" promptText="Date de naissance" styleClass="input" stylesheets="@../styles/config.css" />
+                                                      <Label fx:id="validTextDate" textFill="#ba1200">
+                                                         <VBox.margin>
+                                                            <Insets left="1.0" top="2.0" />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
+                                                <VBox>
+                                                   <VBox.margin>
+                                                      <Insets left="4.0" />
+                                                   </VBox.margin>
+                                                   <children>
+                                                      <HBox prefHeight="32.0" prefWidth="395.0">
+                                                         <children>
+                                                            <JFXComboBox fx:id="phoneNumbers" editable="true" labelFloat="true" onKeyTyped="#addPhoneNumber" prefHeight="25.0" prefWidth="364.0" promptText="Numéros de Téléphone" styleClass="input" stylesheets="@../styles/config.css" />
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#addPhone" prefHeight="32.0" prefWidth="21.0" ripplerFill="#3ccd56" styleClass="addPhone" stylesheets="@../styles/config.css" />
+                                                            <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#delPhone" prefHeight="32.0" prefWidth="6.0" ripplerFill="#fc5252" styleClass="delPhone" stylesheets="@../styles/config.css" />
+                                                         </children>
+                                                      </HBox>
+                                                      <Label fx:id="telephoneValidationLabel" textFill="#ba1200">
+                                                         <VBox.margin>
+                                                            <Insets />
+                                                         </VBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </VBox>
                                                 <Separator prefHeight="7.0" prefWidth="334.0" />
                                                 <JFXTextField fx:id="username" labelFloat="true" promptText="Utilisateur" styleClass="input" stylesheets="@../styles/config.css" />
                                                 <JFXPasswordField fx:id="password" labelFloat="true" onAction="#showPassword" promptText="Mot de passe" styleClass="input" stylesheets="@../styles/config.css" />
@@ -183,12 +210,12 @@
                                                 <Insets bottom="16.0" left="32.0" right="32.0" top="16.0" />
                                              </padding>
                                              <children>
-                                                <TableView prefHeight="576.0" prefWidth="396.0" styleClass="table" stylesheets="@../styles/config.css">
+                                                <TableView fx:id="tableAccounts" prefHeight="576.0" prefWidth="396.0" styleClass="table" stylesheets="@../styles/config.css">
                                                   <columns>
-                                                    <TableColumn prefWidth="75.0" text="Nom" />
-                                                      <TableColumn prefWidth="75.0" text="Prénom" />
-                                                      <TableColumn prefWidth="75.0" text="Utilisateur" />
-                                                      <TableColumn prefWidth="75.0" text="Photo" />
+                                                    <TableColumn fx:id="nomColmn" prefWidth="75.0" text="Nom" />
+                                                      <TableColumn fx:id="prenomColmn" prefWidth="75.0" text="Prénom" />
+                                                      <TableColumn fx:id="usernameColmn" prefWidth="75.0" text="Utilisateur" />
+                                                      <TableColumn fx:id="userPhotoColmn" prefWidth="75.0" text="Photo" />
                                                   </columns>
                                                    <columnResizePolicy>
                                                       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -196,12 +223,12 @@
                                                 </TableView>
                                                 <HBox alignment="TOP_RIGHT" spacing="40.0">
                                                    <children>
-                                                      <JFXButton buttonType="RAISED" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #BA1200; -fx-background-radius: 0;" text="Suprimer" textFill="WHITE">
+                                                      <JFXButton buttonType="RAISED" onAction="#delete" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #BA1200; -fx-background-radius: 0;" text="Suprimer" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="14.0" />
                                                          </font>
                                                       </JFXButton>
-                                                      <JFXButton buttonType="RAISED" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #009B77; -fx-background-radius: 0;" text="Modifier" textFill="WHITE">
+                                                      <JFXButton buttonType="RAISED" onAction="#setupUpdate" prefHeight="25.0" prefWidth="142.0" ripplerFill="#009688" style="-fx-background-color: #009B77; -fx-background-radius: 0;" text="Modifier" textFill="WHITE">
                                                          <font>
                                                             <Font name="System Bold" size="14.0" />
                                                          </font>

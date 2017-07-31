@@ -127,6 +127,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>UserManagement</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.mycompany</groupId>
+                    <artifactId>image_management</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>

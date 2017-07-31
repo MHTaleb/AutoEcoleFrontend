@@ -5,12 +5,17 @@
  */
 package board;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import com.jfoenix.controls.JFXDialogLayout;
 import com.jfoenix.controls.JFXDrawer;
 import com.mycompany.fxutilities.Frame;
-import com.talcorpdz.autoecole.clientgui.MainApp;
+import com.mycompany.fxutilities.ImageConverter;
+import com.mycompany.fxutilities.TalcorpDevTool;
+import com.talcorpdz.autoecole.usermanagement.dao.AccountMetier;
+import com.talcorpdz.autoecole.usermanagement.dao.AccountMetierLocal;
+import entity.Account;
+import entity.Image;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -25,6 +30,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import scope.Scope;
 
 /**
  * FXML Controller class
@@ -48,6 +54,7 @@ public class BoardController implements Initializable {
     @FXML
     private AnchorPane myWindow;
     
+    public static StackPane myStackPAne;
     
 
     /**
@@ -57,7 +64,7 @@ public class BoardController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             mainRoot = root;
-           
+            myStackPAne = rootStackPane;
             drawerContent = (VBox) FXMLLoader.load(getClass().getResource("/fxml/Menu.fxml"));
             drawerMenu.setSidePane(drawerContent);
             Frame.autoSize();
@@ -70,6 +77,7 @@ public class BoardController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(BoardController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
     }
 
     @FXML
@@ -90,10 +98,7 @@ public class BoardController implements Initializable {
 
         content.setHeading(new Text("Taleb Mohammed Housseyn"));
         content.setBody(new Text("Adresse: Batiment des enseignents, logement °5, Maghnia. Tlemcen.\n\nTel: 0778217469. \n\nEmail: talcorpdz@gmail.com"));
-        content.setStyle("-fx-background-color : #234146;");
-       
-        
-
+        content.setStyle("-fx-background-color : #fff;");
         dialog.show(rootStackPane);
        
     }

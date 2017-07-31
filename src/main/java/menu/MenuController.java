@@ -8,6 +8,13 @@ package menu;
 import board.BoardController;
 import com.jfoenix.controls.JFXButton;
 import com.mycompany.fxutilities.Frame;
+import com.mycompany.fxutilities.ImageConverter;
+import com.talcorpdz.autoecole.usermanagement.dao.AccountMetier;
+import com.talcorpdz.autoecole.usermanagement.dao.AccountMetierLocal;
+import entity.Account;
+import entity.Image;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -22,6 +29,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import scope.Scope;
+
 
 /**
  *
@@ -54,7 +63,19 @@ public class MenuController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        Long accountID = (Long) Scope.getAttribute(Scope.ApplicationContext.CURRENT_ACCOUNTID);
+        AccountMetierLocal accountMetier = new AccountMetier();
 
+        Account account = accountMetier.rechercher(accountID);
+        Image image = account.getUserInfo().getImage();
+        try {
+            File readFile = ImageConverter.readFile(image.getId(), image.getImage(), image.getExtension());
+            userImage.setImage(new javafx.scene.image.Image(new FileInputStream(readFile)));
+        } catch (IOException ex) {
+            Logger.getLogger(BoardController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        userLastName.setText(account.getUserInfo().getPrenom());
+        userName.setText(account.getUserInfo().getNom());
     }
 
     @FXML
@@ -86,8 +107,7 @@ public class MenuController implements Initializable {
     @FXML
     private void showConfig(ActionEvent event) {
         try {
-            BoardController.mainRoot.getChildren().setAll((Node)
-                    FXMLLoader.load(getClass().getResource("/fxml/Config.fxml")));
+            BoardController.mainRoot.getChildren().setAll((Node) FXMLLoader.load(getClass().getResource("/fxml/Config.fxml")));
             Frame.autoSize();
         } catch (IOException ex) {
             Logger.getLogger(MenuController.class.getName()).log(Level.SEVERE, null, ex);

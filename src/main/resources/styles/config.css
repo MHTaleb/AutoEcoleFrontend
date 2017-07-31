@@ -32,10 +32,21 @@
     -fx-background-color: #4059a9;
 
 }
+.input:editable .date-picker-display-node{
+    -fx-font: system ;
+    -fx-font-weight: bold;
 
-
-
-
+}
+.input{
+    -fx-font-weight: bold;
+}
+.addPhone{
+    -fx-graphic: url(../media/config/smartphone1.png);
+}
+.delPhone{
+    
+    -fx-graphic: url(../media/config/smartphone2.png);
+}
 
 
 
@@ -67,8 +78,14 @@
     -fx-background-color: transparent;
 }
 
+.table-view .table-column{
+    
+    -fx-alignment: center;
+}
+    
+    
 .table-view .table-cell{
-    -fx-text-fill: white;
+    -fx-text-fill: black;
 }
 
 .table-row-cell{
@@ -81,12 +98,14 @@
     -fx-background-color: -fx-table-cell-border-color, white;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em; /* 0 */  
+    
 }
 
 .table-row-cell:selected {
     -fx-background-color: #234146;
     -fx-background-insets: 0;
     -fx-background-radius: 1;
+    -fx-text-fill: white;
 }
 
 .table-view > .virtual-flow > .scroll-bar:vertical,
